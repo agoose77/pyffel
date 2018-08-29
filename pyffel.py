@@ -1,4 +1,4 @@
-from contract import args, self, contract, old
+from contract import args, self, contract, old, isinstance_
 
 
 def some_func(x, y, z=3):
