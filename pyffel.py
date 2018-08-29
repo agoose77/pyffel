@@ -1,8 +1,4 @@
-
-
-# ## (1.) Separate contract proxy
-
-# In[249]:
+from contract import args, self, contract, old
 
 
 def some_func(x, y, z=3):
@@ -18,10 +14,6 @@ c(2, 4.)
 
 
 # ## (2.) Contract decorator
-
-# In[250]:
-
-
 @contract
 def some_func(x, y, z=3):
     pass
@@ -33,13 +25,6 @@ some_func(3, y=5)
 
 
 # ## Post conditions
-
-# In[253]:
-
-
-# In[272]:
-
-
 class Stateful:
     counter = 0
     
@@ -54,10 +39,6 @@ c.increment(1)
 print("Success 1")
 c.increment(-1)
 print("Success -1")
-
-
-# In[271]:
-
 
 class Account:
     
