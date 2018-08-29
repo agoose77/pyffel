@@ -1,7 +1,7 @@
 from inspect import signature
 from types import SimpleNamespace
 from functools import wraps
-from proxy import Proxy
+from proxy import Proxy, evaluate
     
     
 def contract(func):
