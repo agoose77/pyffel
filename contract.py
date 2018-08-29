@@ -19,6 +19,7 @@ def contract(func):
         for condition in all_pre_conditions:
             assert condition.evaluate(ctx), f"Failed to assert pre condition: {condition}"
         
+        # For now, evaluate post conditions *twice*: once to cache any "old" values, later to evaluate the new expression
         for condition in all_post_conditions:
             condition.evaluate(ctx)
         
