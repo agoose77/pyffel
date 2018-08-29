@@ -1,17 +1,7 @@
-
 from inspect import signature
 from types import SimpleNamespace
 from functools import wraps
-
-
-class ContextProxy(Proxy):
-    def __init__(self, name):
-        super().__init__()
-
-        self.name = name
-        
-    def evaluate(self, ctx):
-        return ctx[self.name]
+from proxy import Proxy
     
     
 def contract(func):
@@ -50,6 +40,16 @@ def contract(func):
     wrapper.require = require
     wrapper.ensure = ensure
     return wrapper
+
+
+class ContextProxy(Proxy):
+    def __init__(self, name):
+        super().__init__()
+
+        self.name = name
+        
+    def evaluate(self, ctx):
+        return ctx[self.name]
 
 
 class Old(Proxy):
